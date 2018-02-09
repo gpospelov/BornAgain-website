@@ -26,6 +26,35 @@
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
 <link href="https://scgmlz.github.io/scgdoc-hugo//css/hugo-easy-gallery.css" rel="stylesheet">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
 </head>
 
 
@@ -118,6 +147,8 @@
 
 <h3 id="using-latex">Using Latex</h3>
 
+<p>Implemented using <a href="Shttps://divadnojnarg.github.io/blog/mathjax/">Setting MathJax with Hugo </a></p>
+
 <h4 id="some-formula-surrounded-by-text">Some formula surrounded by text</h4>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
@@ -126,7 +157,9 @@
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
 
-<h4 id="math-indeces-which-are-known-to-be-problematic-in-markdown-with-escape-char">Math indeces which are known to be problematic in Markdown (with escape char)</h4>
+<h4 id="math-indeces-is-possible-to-render-using-escape-char-for-indices">Math indeces is possible to render using escape char for indices.</h4>
+
+<p>Use <code>a\_{i}</code> instead of <code>a_{i}</code>.</p>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
 
@@ -134,19 +167,74 @@
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
 
-<h4 id="math-indeces-which-are-known-to-be-problematic-in-markdown-as-is">Math indeces which are known to be problematic in Markdown (as is)</h4>
+<h4 id="inline-math-don-t-forget-to-use-escape-char">Inline math (don&rsquo;t forget to use escape char)</h4>
+
+<p>Lorem $ a_{i} = b_{i} + c_{i} $ ipsum dolor sit $\chi^2$ amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+$\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$
+Lorem ipsum dolor sit amet, consectetur $\sqrt{3x-1}+(1+x)^2$  adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+
+<h4 id="latex-showcase">Latex showcase</h4>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
 
-<p>$$ a<em>{i} = b</em>{i} + c_{i} $$</p>
+<p>$$
+\mathbf{V}_1 \times \mathbf{V}_2 =
+   \begin{vmatrix}
+    \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \newline
+    \frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \newline
+    \frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0 \newline
+   \end{vmatrix}
+$$</p>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
 
-<h4 id="inline-math">Inline math</h4>
+<p>$$
+\begin{equation}
+x(t) = e^{\int_{t_0}^tp(s)ds}\Bigg(\int_{t_0}^t\Big(q(s)e^{-\int_{t_0}^sp(\tau)d\tau}\Big)ds + x_0\Bigg).
+\end{equation}
+$$</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
-This is inline: $\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+
+<p>$$
+1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+    \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+     \quad\quad \text{for $|q|&lt;1$}.
+$$</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+
+<p>$$
+\frac{1}{(\sqrt{\phi \sqrt{5}}-\phi) e^{\frac25 \pi}} =
+     1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+      {1+\frac{e^{-8\pi}} {1+\ldots} } } }
+$$</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+
+<h4 id="more-complicated-case-here">More complicated case here.</h4>
+
+<p>Use <code> \left\{ </code> instead of <code> \left{ </code>.</p>
+
+<p>$$
+\left\{
+\begin{align}
+\dot{x} &amp; = \sigma(y-x) \newline
+\dot{y} &amp; = \rho x - y - xz \newline
+\dot{z} &amp; = -\beta z + xy
+\end{align}
+\right.
+$$</p>
+
+<p>To fix alignment problem of the bracket <code>&rsquo;{&rsquo;</code>use <code> \begin{cases} </code> instead of <code> \begin{align} </code></p>
+
+<p>$$
+\begin{cases}
+\dot{x} &amp; = \sigma(y-x) \newline
+\dot{y} &amp; = \rho x - y - xz \newline
+\dot{z} &amp; = -\beta z + xy
+\end{cases}
+$$</p>
 
 
     </div>
@@ -388,6 +476,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praes
       <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/"><span>Working with BornAgain</span></a>
         <ul>
     <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/"><span>Quick Start</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
       <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-python/"><span>Working with Python scripts</span></a>
         <ul>
     <li class="dd-item">
@@ -397,6 +498,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praes
         </ul>
     </li>
         </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
     </li>
         </ul>
     </li>
@@ -449,9 +558,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praes
     <script src="https://scgmlz.github.io/scgdoc-hugo//js/bootstrap.min.js"></script>
     
     <script src="https://scgmlz.github.io/scgdoc-hugo//js/theme.js"></script>
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
     
 
 </body>

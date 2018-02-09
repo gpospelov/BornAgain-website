@@ -29,5 +29,26 @@
 The Big Picture BornAgain is designed to be immediately useful for users with little experience in GISAS simulations while being flexible enough to fulfill requests of advanced users. The figure below represents the set of requirements and practices that have informed our architectural choices.</description>
     </item>
     
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/</guid>
+      <description>Troubleshooting To report bugs or request help with problems in building or running BornAgain, please send us an e-mail or create an issue on github. Provide all relevant information that may help us to analyse the issue. In particular, submit the full output of the last, unsuccessful command (screen copy, or redirection [command] &amp;gt;&amp;amp; [logfile]).
+     Troubleshooting  Configuration (cmake) fails  Qt5 configuration problems  Compilation (make) fails Functional test (ctest) fails  Conflict with older version of BornAgain  Simulation script fails  &amp;ldquo;Fatal Python error: PyThreadState_Get: no current thread&amp;rdquo; &amp;ldquo;incompatible library version of libgsl.</description>
+    </item>
+    
+    <item>
+      <title>Frequently asked questions</title>
+      <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/</guid>
+      <description>Do you have a mailing list? If you wish to receive e-mail notifications as soon as a new BornAgain release becomes available, please register on the entry page of this site.
+How do I get help? If you encounter a problem during the installation or while using BornAgain, please send us an e-mail. Provide all relevant information that may help us to quickly spot the problem.
+How do I request a new feature?</description>
+    </item>
+    
   </channel>
 </rss>

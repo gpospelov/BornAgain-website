@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BornAgain GUI overview -- My New Hugo Site</title>
+
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/theme.css" rel="stylesheet">
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/prettify.css" rel="stylesheet">
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/mathjax-style.css" rel="stylesheet">
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/vs.css" rel="stylesheet">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/hugo-easy-gallery.css" rel="stylesheet">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+
+
+<body>
+<header class="hero overlay">
+<nav class="navbar">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="fa fa-bars"></span>
+      </button>
+      <a class="navbar-brand" href="https://scgmlz.github.io/scgdoc-hugo/">My New Hugo Site</a>
+    </div>
+    
+    <div class="navbar-collapse collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li>
+          <a href="https://scgmlz.github.io/scgdoc-hugo/">Home</a>
+        </li>
+        
+        <li>
+          <a href="https://scgmlz.github.io/scgdoc-hugo/news/">News</a>
+        </li>
+        
+        <li>
+          <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/">Documentation</a>
+        </li>
+        
+        <li>
+          <a href="https://scgmlz.github.io/scgdoc-hugo/about/">About</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  
+</nav>
+
+
+    <div class="masthead single-masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <form>
+                        <input type="text" class="search-field" placeholder="Search Something ... "/>
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="btn btn-hero">
+                        <span class="icon-git"></span> Github Project<span class="icon-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="breadcrumb">
+  <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+ <a href='https://scgmlz.github.io/scgdoc-hugo/'>Home</a> > <a href='https://scgmlz.github.io/scgdoc-hugo/documentation/'>Documentation</a> > <a href='https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/'>BornAgain</a> > <a href='https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/'>Working with BornAgain</a> > <a href='https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/'>Using Graphical User Interface</a> > BornAgain GUI overview
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      
+  
+
+<h2 id="bornagain-gui-overview">BornAgain GUI overview</h2>
+
+<p>The basic features of the interface are explained below.</p>
+
+<ul>
+<li><a href="#welcome-view">Welcome view</a></li>
+<li><a href="#instrument-view">Instrument View</a></li>
+<li><a href="#sample-view">Sample View</a></li>
+<li><a href="#simulation-view">Simulation View</a></li>
+<li><a href="#jobs-view">Jobs View</a></li>
+</ul>
+
+<h3 id="welcome-view">Welcome view</h3>
+
+<p>When you start BornAgain GUI, you will be presented with the Welcome View, where you can</p>
+
+<ul>
+<li>Create new projects</li>
+<li>Open recent projects</li>
+</ul>
+
+<figure class="center">
+ 	  <a href="gui_welcomeview_l.png">
+ 	  	<img src="gui_welcomeview_l.png" width="800px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>You can use the view selector located on the left vertical panel (1) to change to one of the following views.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><figure class="center">
+ 	  <a href="main_welcomeview.png">
+ 	  	<img src="main_welcomeview.png" width="50px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+</td>
+<td align="left">Switch to Welcome View</td>
+</tr>
+
+<tr>
+<td align="left"><figure class="center">
+ 	  <a href="main_instrumentview.png">
+ 	  	<img src="main_instrumentview.png" width="50px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+</td>
+<td align="left">Define the beam and the detector</td>
+</tr>
+
+<tr>
+<td align="left"><figure class="center">
+ 	  <a href="main_sampleview.png">
+ 	  	<img src="main_sampleview.png" width="50px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+</td>
+<td align="left">Build the sample</td>
+</tr>
+
+<tr>
+<td align="left"><figure class="center">
+ 	  <a href="main_importview.png">
+ 	  	<img src="main_importview.png" width="50px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+</td>
+<td align="left">Import experimental data to fit</td>
+</tr>
+
+<tr>
+<td align="left"><figure class="center">
+ 	  <a href="main_simulationview.png">
+ 	  	<img src="main_simulationview.png" width="50px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+</td>
+<td align="left">Run simulation</td>
+</tr>
+
+<tr>
+<td align="left"><figure class="center">
+ 	  <a href="main_jobview.png">
+ 	  	<img src="main_jobview.png" width="50px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+</td>
+<td align="left">Switch to see job results, tune parameters real time, fit the data</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="instrument-view">Instrument View</h3>
+
+<p>The Instrument View is used to create new scattering instruments and adjust their settings. The view consists in the instrument selector located on the left (1) and the instrument settings window located on the right (2).</p>
+
+<figure class="center">
+ 	  <a href="gui_instrumentview_l.png">
+ 	  	<img src="gui_instrumentview_l.png" width="800px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>On the instrument settings window (2) you can modify the settings of the currently selected instrument:</p>
+
+<ul>
+<li>The name of the instrument</li>
+<li>The beam parameters</li>
+<li>The detector parameters</li>
+</ul>
+
+<h3 id="sample-view">Sample View</h3>
+
+<p>The Sample View allows you to design the sample via a drag-and-drop interface. It consists in 4 main parts</p>
+
+<ul>
+<li>The item toolbox (1) contains a variety of items to build the sample</li>
+<li>The sample canvas (2) is used to assemble the sample</li>
+<li>The sample tree view (3) represents the hierarchy of the objects composing the sample</li>
+<li>The property editor (4) can be used to edit the parameters of the currently selected item</li>
+</ul>
+
+<figure class="center">
+ 	  <a href="gui_sampleview_l.png">
+ 	  	<img src="gui_sampleview_l.png" width="800px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<blockquote>
+<p>The sample constructed in this figure comprises a substrate on which are deposited, in equal proportion, cylinders and prisms. The interference between scattered waves is provided via the two-dimensional paracrystal interference function. The property editor shows the parameters of the currently selected cylindrical particles (radius and height of cylinders, their material, the particles depth and abundance).</p>
+</blockquote>
+
+<p>The sample is constructed by dragging items from the item toolbox (1), dropping them on the sample canvas (2), connecting the items of the appropriate types together and adjusting their properties, if necessary, using the property editor (4). Particularly, the sample shown on this plot was constructed using the following steps:</p>
+
+<ul>
+<li>The multilayer item was taken from the item toolbox and placed on the sample canvas</li>
+<li>Two layer items were taken from the item toolbox and placed on top of the multilayer
+
+<ul>
+<li>The materials of the top and bottom layers were changed from the default one using the property editor</li>
+</ul></li>
+<li>ParticleLayout item was taken from the item toolbox, placed on the sample canvas and connected with the top layer</li>
+<li>Cylinders and prisms were dropped on the sample canvas and connected with the ParticleLayout
+
+<ul>
+<li>The materials of the particles were changed from the default one using the property editor</li>
+</ul></li>
+<li>The interference function representing a 2D paracrystal was placed on the sample canvas and connected with the ParticleLayout item</li>
+</ul>
+
+<div class="alert 
+alert-info"
+ 
+role="alert"><p><strong>Note</strong></p>
+
+<p>The sample canvas can have any number of multilayers. If this is the case, during the configuration of the simulation user will have to choose which multilayer to simulate. The multilayer is considered as valid for the simulation, if it contains at least one layer.</p>
+</div>
+
+
+<h3 id="simulation-view">Simulation View</h3>
+
+<p>The Simulation View contains three important elements</p>
+
+<ul>
+<li>The data selection box for selecting the instrument and the sample to simulate (1)</li>
+<li>Simulation Parameters box for changing the main simulation parameters (2)</li>
+<li>The Run Simulation button (3)</li>
+</ul>
+
+<figure class="center">
+ 	  <a href="gui_simulationview_l.png">
+ 	  	<img src="gui_simulationview_l.png" width="800px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<p>The names of the defined instruments and samples are displayed in the Data Selection box (1). From where the user can select a combination to run the simulation.</p>
+
+<p>Clicking on the Run Simulation button (3) immediately starts the simulation. When completed, the current view is automatically switched to the Jobs View showing the simulation results. This behaviour can be modified by changing Run Policy in (2).</p>
+
+<h3 id="jobs-view">Jobs View</h3>
+
+<p>The Jobs View displays results of the simulation. It has two different presentations called</p>
+
+<ul>
+<li><a href="#job-view-activity">Job View Activity</a></li>
+<li><a href="#real-time-activity">Real Time Activity</a></li>
+</ul>
+
+<p>Job View Activity is shown by default.</p>
+
+<h4 id="job-view-activity">Job View Activity</h4>
+
+<p>The layout of the Job View Activity consists of three elements</p>
+
+<ul>
+<li>The jobs selector widget (1) for selecting the specific job to be displayed</li>
+<li>The job properties widget (2) contains basic information about the currently selected job</li>
+<li>The intensity data widget (3) shows the intensity data of the currently selected job</li>
+</ul>
+
+<p>The toolbar (4) contains a set of control elements for the job selector and the intensity data widgets. The right corner of the toolbar is occupied by the Jobs Activity selector.</p>
+
+<figure class="center">
+ 	  <a href="gui_jobview_l.png">
+ 	  	<img src="gui_jobview_l.png" width="800px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<blockquote>
+<p>The two completed jobs can be seen in the job selector widget (1), with job2 currently selected and dislayed.</p>
+</blockquote>
+
+<div class="alert 
+alert-info"
+ 
+role="alert"><p>The intensity image in widget (3) offers several ways of interaction:</p>
+
+<ul>
+<li>Using the mouse wheel to zoom in and out</li>
+<li>Dragging the color palette on the right of the image to change the min, max range of the z-axis</li>
+<li>The toolbar (4) on top of intensity data widget gives access to more options via the Plot Properties and Projections buttons</li>
+</ul>
+</div>
+
+
+<figure class="center">
+ 	  <a href="gui_jobview_proj_l.png">
+ 	  	<img src="gui_jobview_proj_l.png" width="800px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<blockquote>
+<p>The image represents the results of job2 with the Projections (1) and Plot Properties (2) widgets switched On. The type of colorbar gradient is changed from the default Polar to Spectrum.</p>
+</blockquote>
+
+<h4 id="real-time-activity">Real Time Activity</h4>
+
+<p>The second layout of the Job View is called the Real Time Activity. It can be switched on by selecting the appropriate item in the box located in the right corner of tool bar (1).</p>
+
+<figure class="center">
+ 	  <a href="gui_jobview_realtime_l.png">
+ 	  	<img src="gui_jobview_realtime_l.png" width="800px">
+ 	  </a>
+      <figcaption>
+      	<p></p>
+      </figcaption>
+	</figure>
+
+
+<blockquote>
+<p>The layout of the Job View consist in the Intensity Data widget on the left (2), and an additional parameter tree located on the right (3).</p>
+</blockquote>
+
+<p>The parameter tree represents all the parameters which have been used during the construction of the scattering instrument and the sample. Each displayed parameter value can be adjusted using the slider. The simulation will run in the background and the Intensity Data widget will be constantly updated reflecting the influence of this given parameter on the simulation results.</p>
+
+<div class="alert 
+alert-info"
+ 
+role="alert"><p><strong>Note</strong></p>
+
+<p>The Real Time View works smoothly only for simple geometries, when the simulation requires fractions of a second to run. For more complex geometries, demanding lots of CPU, the user will see a progress bar and any movements of the slider will not have any influence on the Intensity Data widget. In this case the user may try to speed up the simulation by decreasing the number of detector channels in the Instrument View and submitting a new job by running the simulation from the Simulation View.</p>
+</div>
+
+
+<div class="alert 
+alert-warning"
+ 
+role="alert"><p><strong>Important</strong></p>
+
+<p>The jobs in Jobs View are completely isolated from the rest of the program. Any adjustments of the sample parameters in the Sample View or the instrument parameters in the Instrument View won&rsquo;t have any influence on the jobs already completed or still running in the Jobs View. Similarly, any parameter adjustments made in the parameter tree (3) will not be propagated back into the Sample or Instrument Views.</p>
+</div>
+
+
+
+    </div>
+    <div class="col-md-4">
+    <ul class="doctree">
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/"><span>Documentation</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/overview/"><span>Overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/getstarted/"><span>Get started</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/whats-next/"><span>What&#39;s next</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/"><span>Playground</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/"><span>Basic markdown</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/headers/"><span>Paragraphs and headers</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/emphasis/"><span>Emphasis</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/list-elements/"><span>List elements</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/table-elements/"><span>Table elements</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/link-elements/"><span>Link elements</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/code-highlight/"><span>Code highlight</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/code-highlight/basic-highlight/"><span>Basic highlight</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/code-highlight/embedded-files/"><span>Python code embedded</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/code-highlight/client-side/"><span>Highlight on client side</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/"><span>Insert images</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/basic-insert/"><span>Insert via markdown</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/figure-shortcode/"><span>Standard figure shortcode</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/figfancy-shortcode/"><span>Custom figfancy shortcode</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/figscg-shortcode/"><span>Custom figscg shortcode</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/easy-gallery/"><span>Easy gallery</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/"><span>Children shortcode</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child1/"><span>Child1</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child2/"><span>Child2</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child3/"><span>Child3</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child3/grandchild1/"><span>Grandchild1</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child3/grandchild2/"><span>Grandchild2</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child4/"><span>Child4</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/using-latex/"><span>Using Latex</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/alert-panels/"><span>Allerts, notices and panels</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/buttons/"><span>Action buttons</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/labels-and-icons/"><span>Labels and icons</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/tutorial10/"><span>Tabs embedded, accordions</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/video/"><span>Youtube and staff</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/"><span>BornAgain</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/welcome/"><span>Welcome to BornAgain</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/architectural-overview/"><span>Architectural overview</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/"><span>Installation instructions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/windows/"><span>Installation on Windows</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/macos/"><span>Installation on MacOS</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/macos/advanced-tips/"><span>Advanced tips</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-short/"><span>Installation on Unix (short version)</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/"><span>Installation on Unix (detailed version)</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/get-source/"><span>Get the source</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/third-party/"><span>Install the third party software</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/build-and-install/"><span>Build and install the framework</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/first-simulation/"><span>Run the first simulation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/"><span>Examples of BornAgain usage</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/embedded-particles/"><span>Embedded particles</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/embedded-particles/cylindersinba/"><span>Cylinders in Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/embedded-particles/cylindersindwba/"><span>Cylinders in Distorted Wave Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/embedded-particles/cylinderswithsizedistribution/"><span>Cylinders with size distribution</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/layered-structures/"><span>Layered structures</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/layered-structures/buriedparticles/"><span>Buried particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/layered-structures/correlatedroughness/"><span>Correlated roughness</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/"><span>Working with BornAgain</span></a>
+        <ul>
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/"><span>Quick Start</span> </a>
+    </li>
+    <li class="dd-item active">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-python/"><span>Working with Python scripts</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-python/materialtypes/"><span>Material types</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+    </div>
+  </div>
+</div>    <hr>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <ul class="list-inline text-center">
+                    
+                      <li>
+                        <a href="mailto:james.bond@gmail.com">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                      </li>
+                    
+                    
+                    <li>
+                      <a href="https://github.com/gamesbond">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <p class="copyright text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://scgmlz.github.io/scgdoc-hugo//js/jquery.min.js"></script>
+
+    
+
+    
+    <script src="https://scgmlz.github.io/scgdoc-hugo//js/bootstrap.min.js"></script>
+    
+    <script src="https://scgmlz.github.io/scgdoc-hugo//js/theme.js"></script>
+    
+
+</body>
+</html>
+
+
+

@@ -131,6 +131,19 @@ magnetization = ba.kvector_t(1.0, 0.0, 0.0) &amp;lt;material&amp;gt; = ba.Homoge
     </item>
     
     <item>
+      <title>Quick Start</title>
+      <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/</guid>
+      <description>Quick Start This tutorial demonstrates how to run the simulation and get simulated intensity data image in a few mouse clicks.
+1. Run BornAgain Graphical User Interface   
+  Use BornAgain icon located on the desktop (Windows) or on Launchpad (MacOS) to start the GUI.
+For Linux users: run an executable located in BornAgain installation directory from command line:
+$ &amp;lt;install_dir&amp;gt;/bin/BornAgain  2. Switch to the Sample View</description>
+    </item>
+    
+    <item>
       <title>Welcome to BornAgain</title>
       <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/welcome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -147,6 +160,18 @@ magnetization = ba.kvector_t(1.0, 0.0, 0.0) &amp;lt;material&amp;gt; = ba.Homoge
       <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/embedded-particles/cylindersinba/</guid>
       <description>Cylinders in Born Approximation Scattering from a monodisperse distribution of cylinders using the Born approximation.
  The cylinders are all identical with radii and heights equal to 5 nanometers. The wavelength is equal to 1 Å. The incident angles are equal to αi = 0.2° and Φi=0°. There is no substrate (particles are embedded in the air layer), hence no refraction, hence no distorted waves, hence DWBA boils down to regular Born approximation.</description>
+    </item>
+    
+    <item>
+      <title>BornAgain GUI overview</title>
+      <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/</guid>
+      <description>BornAgain GUI overview The basic features of the interface are explained below.
+ Welcome view Instrument View Sample View Simulation View Jobs View  Welcome view When you start BornAgain GUI, you will be presented with the Welcome View, where you can
+ Create new projects Open recent projects    
+  You can use the view selector located on the left vertical panel (1) to change to one of the following views.</description>
     </item>
     
     <item>
@@ -376,9 +401,10 @@ Just a lot of text to test anchors Lorem ipsum dolor sit amet, ridens verterem e
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/playground/using-latex/</guid>
-      <description>Using Latex Some formula surrounded by text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+      <description>Using Latex Implemented using Setting MathJax with Hugo 
+Some formula surrounded by text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
 $$\left [ – \frac{\hbar^2}{2 m} \frac{\partial^2}{\partial x^2} + V \right ] \Psi = i \hbar \frac{\partial}{\partial t} \Psi$$
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</description>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
     </item>
     
     <item>
@@ -393,6 +419,16 @@ this is a text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
     </item>
     
     <item>
+      <title>Troubleshooting</title>
+      <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/</guid>
+      <description>Troubleshooting To report bugs or request help with problems in building or running BornAgain, please send us an e-mail or create an issue on github. Provide all relevant information that may help us to analyse the issue. In particular, submit the full output of the last, unsuccessful command (screen copy, or redirection [command] &amp;gt;&amp;amp; [logfile]).
+     Troubleshooting  Configuration (cmake) fails  Qt5 configuration problems  Compilation (make) fails Functional test (ctest) fails  Conflict with older version of BornAgain  Simulation script fails  &amp;ldquo;Fatal Python error: PyThreadState_Get: no current thread&amp;rdquo; &amp;ldquo;incompatible library version of libgsl.</description>
+    </item>
+    
+    <item>
       <title>Action buttons</title>
       <link>https://scgmlz.github.io/scgdoc-hugo/documentation/playground/buttons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -401,6 +437,17 @@ this is a text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer 
       <description>Action buttons Tutorial demonstrates, how to insert action buttons (i.e. links to travis builds, &amp;ldquo;follow me&amp;rdquo; etc)
 Buttons: success, info etc&amp;hellip; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
  go to google  Success  Info  Warning  Danger !  Danger !  Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
+    </item>
+    
+    <item>
+      <title>Frequently asked questions</title>
+      <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/</guid>
+      <description>Do you have a mailing list? If you wish to receive e-mail notifications as soon as a new BornAgain release becomes available, please register on the entry page of this site.
+How do I get help? If you encounter a problem during the installation or while using BornAgain, please send us an e-mail. Provide all relevant information that may help us to quickly spot the problem.
+How do I request a new feature?</description>
     </item>
     
     <item>

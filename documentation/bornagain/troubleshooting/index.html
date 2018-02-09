@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Troubleshooting -- My New Hugo Site</title>
+
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/theme.css" rel="stylesheet">
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/prettify.css" rel="stylesheet">
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/mathjax-style.css" rel="stylesheet">
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/vs.css" rel="stylesheet">
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+<link href="https://scgmlz.github.io/scgdoc-hugo//css/hugo-easy-gallery.css" rel="stylesheet">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+
+
+<body>
+<header class="hero overlay">
+<nav class="navbar">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="fa fa-bars"></span>
+      </button>
+      <a class="navbar-brand" href="https://scgmlz.github.io/scgdoc-hugo/">My New Hugo Site</a>
+    </div>
+    
+    <div class="navbar-collapse collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li>
+          <a href="https://scgmlz.github.io/scgdoc-hugo/">Home</a>
+        </li>
+        
+        <li>
+          <a href="https://scgmlz.github.io/scgdoc-hugo/news/">News</a>
+        </li>
+        
+        <li>
+          <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/">Documentation</a>
+        </li>
+        
+        <li>
+          <a href="https://scgmlz.github.io/scgdoc-hugo/about/">About</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  
+</nav>
+
+
+    <div class="masthead single-masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <form>
+                        <input type="text" class="search-field" placeholder="Search Something ... "/>
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="btn btn-hero">
+                        <span class="icon-git"></span> Github Project<span class="icon-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="breadcrumb">
+  <div class="container">
+
+
+
+
+
+
+
+ <a href='https://scgmlz.github.io/scgdoc-hugo/'>Home</a> > <a href='https://scgmlz.github.io/scgdoc-hugo/documentation/'>Documentation</a> > <a href='https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/'>BornAgain</a> > Troubleshooting
+
+ 
+
+ 
+
+ 
+
+   
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      
+  
+
+<h3 id="troubleshooting">Troubleshooting</h3>
+
+<p>To report bugs or request help with problems in building or running BornAgain, please send us an <a href="mailto:contact@bornagainproject.org">e-mail</a> or create an issue on <a href="https://github.com/scgmlz/BornAgain">github</a>. Provide all relevant information that may help us to analyse the issue. In particular, submit the full output of the last, unsuccessful command (screen copy, or redirection <code>[command] &gt;&amp; [logfile]</code>).</p>
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#troubleshooting">Troubleshooting</a>
+<ul>
+<li><a href="#configuration-cmake-fails">Configuration (cmake) fails</a>
+<ul>
+<li><a href="#qt5-configuration-problems">Qt5 configuration problems</a></li>
+</ul></li>
+<li><a href="#compilation-make-fails">Compilation (make) fails</a></li>
+<li><a href="#functional-test-ctest-fails">Functional test (ctest) fails</a>
+<ul>
+<li><a href="#conflict-with-older-version-of-bornagain">Conflict with older version of BornAgain</a></li>
+</ul></li>
+<li><a href="#simulation-script-fails">Simulation script fails</a>
+<ul>
+<li><a href="#fatal-python-error-pythreadstate-get-no-current-thread">&ldquo;Fatal Python error: PyThreadState_Get: no current thread&rdquo;</a></li>
+<li><a href="#incompatible-library-version-of-libgsl-0-dylib-conflict-with-mantid-under-macos">&ldquo;incompatible library version of libgsl.0.dylib&rdquo; [conflict with Mantid under MacOS]</a></li>
+</ul></li>
+<li><a href="#missing-api-ms-win-crt-runtime-l1-1-0-dll">Missing api-ms-win-crt-runtime-l1-1-0.dll</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+<h4 id="configuration-cmake-fails">Configuration (cmake) fails</h4>
+
+<p>To accelerate the build process, <code>CMake</code> maintains a cache. The downside is that this cache can cause false positives (erroneous error reports) and false negatives (<code>CMake</code> overlooking missing dependencies). Unless <code>CMake</code> has been run for the first the time in a fresh build directory, troubleshooting should start by removing the cache</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ rm CMakeCache.txt
+</code></pre></div>
+
+<p>and running <code>CMake</code> anew. If that does not help, then empty the build directory completely, and run <code>CMake</code> yet again.</p>
+
+<p>Next, carefully read the error message, which will have the following form:</p>
+
+<pre><code>CMake Error at [cmake module]:[line number] (message):
+  [specific error message]
+Call Stack (most recent call first):
+  [cmake module]:[line] ([command])
+  ...
+-- Configuring incomplete, errors occurred!
+See also &quot;[build_dir]/CMakeFiles/CMakeOutput.log&quot;.
+See also &quot;[build_dir]/CMakeFiles/CMakeError.log&quot;.
+</code></pre>
+
+<p>The most frequent error is a missing dependence because a third party library not installed on the system, or not found by <code>CMake</code>.</p>
+
+<p>If you require our support, then please rerun <code>CMake</code> in an empty build directory and provide a full copy of its output, most easily generated by output redirection</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ cmake <span class="o">[</span>&lt;options&gt;<span class="o">]</span> &lt;source_dir&gt; &gt;<span class="p">&amp;</span> my_cmake.log
+</code></pre></div>
+
+<p>Besides the so obtained my_cmake.log also send us three other log files produced by <code>CMake</code> in the build directory:</p>
+
+<pre><code>CMakeCache.txt
+CMakeFiles/CMakeOutput.log
+CMakeFiles/CMakeError.log
+</code></pre>
+
+<h5 id="qt5-configuration-problems">Qt5 configuration problems</h5>
+
+<p>On some Linux systems <code>CMake</code> configuration might fail while trying to locate Qt5 libraries with an error message similar to</p>
+
+<pre><code>-- Configuring BornAgain GUI
+CMake Error at GUI/CMakeLists.txt:18 (find_package):
+  By not providing &quot;FindQt5Designer.cmake&quot; in CMAKE_MODULE_PATH this project
+  has asked CMake to find a package configuration file provided by
+  &quot;Qt5Designer&quot;, but CMake did not find one.
+</code></pre>
+
+<p>The error message can also complain about &ldquo;Qt5Widgets&rdquo; instead of &ldquo;Qt5Designer&rdquo;.</p>
+
+<p>First, make sure that all Qt5 libraries are installed as required in the <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/third-party/">installation section</a>.</p>
+
+<p>If this is the case, a first possible cause for this to happen, is that <code>cmake</code> cannot find the cmake config files for the required Qt5 modules, because it doesn&rsquo;t know the location. This can be fixed by adding the path to the Qt5 binaries to the <code>PATH</code> environment variable:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="c1"># Adding Qt5 binary path to PATH environment variable</span>
+$ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/&lt;Qt5InstallDir&gt;/Qt/&lt;QtVersion&gt;/gcc_64/bin:<span class="nv">$PATH</span>
+</code></pre></div>
+
+<p>Another cause is a miss-configuration in Qt5 as provided by your Linux&rsquo;s package manager. For example, Ubuntu 14.04.1 LTS is known to have this problem. The solution will be to install Qt5 via the online installer, as explained in our <a href="">Qt5 alternative installation instruction</a>.</p>
+
+<p>If this still doesn&rsquo;t work, please send us an email with your <code>cmake</code> configuration log and your distro name.</p>
+
+<h4 id="compilation-make-fails">Compilation (make) fails</h4>
+
+<p>In the case of a complex system setup, with libraries of different versions scattered across multiple places, <code>CMake</code> might fail in identifying the correct paths to the libraries or include directories. This might lead at some point to a compilation failure. This might happen, for example, during the compilation of the <code>BornAgain</code> graphical user interface if the system has both Qt4 and Qt5 libraries installed. Please send us the build log generated by running the following make command</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ make <span class="nv">VERBOSE</span><span class="o">=</span><span class="m">1</span> &gt;<span class="p">&amp;</span> my_build.log
+</code></pre></div>
+
+<h4 id="functional-test-ctest-fails">Functional test (ctest) fails</h4>
+
+<p>If <code>ctest</code> fails, then rerun it without the multi-core option <code>-j[N]</code>. This yields clearer, sorted output, and allows to rule out errors due to thread-safety violations.</p>
+
+<p>Error messages from <code>ctest</code> have the form</p>
+
+<pre><code>The following tests FAILED:
+    53 - CoreSuite/HexParaCrystal (Failed)
+   123 - PySuite/HexParaCrystal (Failed)
+For details, see the log files in Testing/Temporary/
+More info at http://www.bornagainproject.org/documentation/troubleshooting#ctest
+Errors while running CTest
+</code></pre>
+
+<p>To analyse these errors one by one, it is convenient to run <code>ctest</code> on a single test:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ ctest -R PySuite/HexParaCrystal
+</code></pre></div>
+
+<p>Then analyse the output in <code>Testing/Temporary/LastTest.log</code>. Alternatively, set the environment variable <code>CTEST_OUTPUT_ON_FAILURE=1</code> to get full terminal output from the failed tests. Yet another alternative would be to run the test binary directly from <code>&lt;build_dir&gt;/bin</code>.</p>
+
+<p>When reporting errors to us, please run just the plain <code>ctest</code> without options <code>-j</code> or <code>-R</code>, and submit <code>Testing/Temporary/LastTest.log</code>.</p>
+
+<h5 id="conflict-with-older-version-of-bornagain">Conflict with older version of BornAgain</h5>
+
+<p>A frequent cause for errors at this stage is a conflict with older versions of <code>BornAgain</code> installed on the system. Make sure the <code>LD_LIBRARY_PATH</code> and <code>PYTHONPATH</code> variables do not contain the older installation location and run <code>ctest</code> again.</p>
+
+<h4 id="simulation-script-fails">Simulation script fails</h4>
+
+<h5 id="fatal-python-error-pythreadstate-get-no-current-thread">&ldquo;Fatal Python error: PyThreadState_Get: no current thread&rdquo;</h5>
+
+<p>This error shows up when a Python module tries to use a Python library that is different than the one the interpreter uses. This might happen if the user&rsquo;s system contains several  Python installations.</p>
+
+<p>For example, BornAgain was compiled against <code>/usr/lib64/libpython2.7.so</code> and then used by mistake with a Python interpreter from another installation. This interpreter might depend on his own version of <code>libpython2.7.so</code>  located, for example, at <code>/usr/local</code>. Importing of the bornagain module into this interpreter will cause the loading of two different <code>libpython2.7.so</code> libraries: one will be loaded by the bornagain module, the other will be loaded by the interpreter itself. This will cause the given fatal Python error. Make sure you are running the correct Python interpreter and that your <code>PYTHONPATH</code> and <code>DYLD_LIBRARY_PATH</code> doesn&rsquo;t contain the old BornAgain installation.</p>
+
+<h5 id="incompatible-library-version-of-libgsl-0-dylib-conflict-with-mantid-under-macos">&ldquo;incompatible library version of libgsl.0.dylib&rdquo; [conflict with Mantid under MacOS]</h5>
+
+<p>When Mantid is installed on the system, BornAgain might conflict with its libraries if the path to Mantid is specified in the <code>DYLD_LIBRARY_PATH</code> and/or <code>PYTHONPATH</code> environment variables. This conflict can occur while running any of the BornAgain Python examples or just during the import of BornAgain into Python, with an error message similar to:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ python -c <span class="s2">&quot;import bornagain&quot;</span>
+ 
+Incompatible library version: libBornAgainCore.so requires
+version 18.0.0 or later, but libgsl.0.dylib provides version 16.0.0
+</code></pre></div>
+
+<p>Make sure that the path to the Mantid folders is not defined in your <code>DYLD_LIBRARY_PATH</code> and/or <code>PYTHONPATH</code> variables by running the commands <code>echo $DYLD_LIBRARY_PATH</code> and <code>echo $PYTHONPATH</code>. If this is the case, unset the given variables to prevent the MacOS loader from loading Mantid</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ <span class="nb">unset</span> DYLD_LIBRARY_PATH<span class="p">;</span> <span class="nb">unset</span> <span class="nv">$PYTHONPATH</span>
+</code></pre></div>
+
+<p>This should resolve the issue.</p>
+
+<div class="notices tip" ><p>To see which libraries get loaded by the MacOS loader during the import of BornAgain, use</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ <span class="nb">export</span> <span class="nv">DYLD_PRINT_LIBRARIES</span><span class="o">=</span>1
+$ python -c <span class="s2">&quot;import bornagain&quot;</span>
+</code></pre></div>
+</div>
+
+
+<h4 id="missing-api-ms-win-crt-runtime-l1-1-0-dll">Missing api-ms-win-crt-runtime-l1-1-0.dll</h4>
+
+<p>On some Windows machines, you might get the message &ldquo;The program can&rsquo;t start because api-ms-win-crt-runtime-l1-1-0.dll is missing from your computer. &hellip;&rdquo;. You then have to install the Visual C++ Redistributable for Visual Studio 2015. See for example the discussion at <a href="http://stackoverflow.com/questions/33265663/api-ms-win-crt-runtime-l1-1-0-dll-is-missing-when-open-office-file">stackoverflow</a>.</p>
+
+<p>Before installing the Visual C++ Redistributable, install all Windows updates. Then download and install the <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48145">Visual C++ Redistributable from Microsoft</a>.</p>
+
+
+    </div>
+    <div class="col-md-4">
+    <ul class="doctree">
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/"><span>Documentation</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/overview/"><span>Overview</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/getstarted/"><span>Get started</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/whats-next/"><span>What&#39;s next</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/"><span>Playground</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/"><span>Basic markdown</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/headers/"><span>Paragraphs and headers</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/emphasis/"><span>Emphasis</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/list-elements/"><span>List elements</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/table-elements/"><span>Table elements</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/basic-markdown/link-elements/"><span>Link elements</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/code-highlight/"><span>Code highlight</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/code-highlight/basic-highlight/"><span>Basic highlight</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/code-highlight/embedded-files/"><span>Python code embedded</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/code-highlight/client-side/"><span>Highlight on client side</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/"><span>Insert images</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/basic-insert/"><span>Insert via markdown</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/figure-shortcode/"><span>Standard figure shortcode</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/figfancy-shortcode/"><span>Custom figfancy shortcode</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/figscg-shortcode/"><span>Custom figscg shortcode</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/insert-image/easy-gallery/"><span>Easy gallery</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/"><span>Children shortcode</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child1/"><span>Child1</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child2/"><span>Child2</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child3/"><span>Child3</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child3/grandchild1/"><span>Grandchild1</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child3/grandchild2/"><span>Grandchild2</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/children/child4/"><span>Child4</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/using-latex/"><span>Using Latex</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/alert-panels/"><span>Allerts, notices and panels</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/buttons/"><span>Action buttons</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/labels-and-icons/"><span>Labels and icons</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/tutorial10/"><span>Tabs embedded, accordions</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/playground/video/"><span>Youtube and staff</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item parent">
+          <i class="fa liOpened li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/"><span>BornAgain</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/welcome/"><span>Welcome to BornAgain</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/architectural-overview/"><span>Architectural overview</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/"><span>Installation instructions</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/windows/"><span>Installation on Windows</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/macos/"><span>Installation on MacOS</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/macos/advanced-tips/"><span>Advanced tips</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-short/"><span>Installation on Unix (short version)</span> </a>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/"><span>Installation on Unix (detailed version)</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/get-source/"><span>Get the source</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/third-party/"><span>Install the third party software</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/build-and-install/"><span>Build and install the framework</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/unix-detailed/first-simulation/"><span>Run the first simulation</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/"><span>Examples of BornAgain usage</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/embedded-particles/"><span>Embedded particles</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/embedded-particles/cylindersinba/"><span>Cylinders in Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/embedded-particles/cylindersindwba/"><span>Cylinders in Distorted Wave Born Approximation</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/embedded-particles/cylinderswithsizedistribution/"><span>Cylinders with size distribution</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/layered-structures/"><span>Layered structures</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/layered-structures/buriedparticles/"><span>Buried particles</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/layered-structures/correlatedroughness/"><span>Correlated roughness</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/"><span>Working with BornAgain</span></a>
+        <ul>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/"><span>Quick Start</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-python/"><span>Working with Python scripts</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-python/materialtypes/"><span>Material types</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item active">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+    </div>
+  </div>
+</div>    <hr>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <ul class="list-inline text-center">
+                    
+                      <li>
+                        <a href="mailto:james.bond@gmail.com">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                      </li>
+                    
+                    
+                    <li>
+                      <a href="https://github.com/gamesbond">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <p class="copyright text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://scgmlz.github.io/scgdoc-hugo//js/jquery.min.js"></script>
+
+    
+
+    
+    <script src="https://scgmlz.github.io/scgdoc-hugo//js/bootstrap.min.js"></script>
+    
+    <script src="https://scgmlz.github.io/scgdoc-hugo//js/theme.js"></script>
+    
+
+</body>
+</html>
+
+
+

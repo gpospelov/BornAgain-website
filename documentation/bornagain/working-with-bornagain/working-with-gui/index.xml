@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Using Graphical User Interface on My New Hugo Site</title>
+    <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/</link>
+    <description>Recent content in Using Graphical User Interface on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quick Start</title>
+      <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/</guid>
+      <description>Quick Start This tutorial demonstrates how to run the simulation and get simulated intensity data image in a few mouse clicks.
+1. Run BornAgain Graphical User Interface   
+  Use BornAgain icon located on the desktop (Windows) or on Launchpad (MacOS) to start the GUI.
+For Linux users: run an executable located in BornAgain installation directory from command line:
+$ &amp;lt;install_dir&amp;gt;/bin/BornAgain  2. Switch to the Sample View</description>
+    </item>
+    
+    <item>
+      <title>BornAgain GUI overview</title>
+      <link>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/</guid>
+      <description>BornAgain GUI overview The basic features of the interface are explained below.
+ Welcome view Instrument View Sample View Simulation View Jobs View  Welcome view When you start BornAgain GUI, you will be presented with the Welcome View, where you can
+ Create new projects Open recent projects    
+  You can use the view selector located on the left vertical panel (1) to change to one of the following views.</description>
+    </item>
+    
+  </channel>
+</rss>

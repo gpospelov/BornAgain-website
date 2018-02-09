@@ -28,6 +28,35 @@
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
 <link href="https://scgmlz.github.io/scgdoc-hugo//css/hugo-easy-gallery.css" rel="stylesheet">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
 </head>
 
 
@@ -140,7 +169,9 @@ role="alert"><p>Software and documentation are work in progress. Some features o
 	<a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/architectural-overview/" >Architectural overview</a></li><li>
 	<a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/installation/" >Installation instructions</a></li><li>
 	<a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/python-examples/" >Examples of BornAgain usage</a></li><li>
-	<a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/" >Working with BornAgain</a></li>
+	<a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/" >Working with BornAgain</a></li><li>
+	<a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/" >Troubleshooting</a></li><li>
+	<a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/" >Frequently asked questions</a></li>
 </ul>
 
 
@@ -388,6 +419,19 @@ role="alert"><p>Software and documentation are work in progress. Some features o
       <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/"><span>Working with BornAgain</span></a>
         <ul>
     <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/"><span>Quick Start</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
       <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-python/"><span>Working with Python scripts</span></a>
         <ul>
     <li class="dd-item">
@@ -397,6 +441,14 @@ role="alert"><p>Software and documentation are work in progress. Some features o
         </ul>
     </li>
         </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
     </li>
         </ul>
     </li>
@@ -449,9 +501,6 @@ role="alert"><p>Software and documentation are work in progress. Some features o
     <script src="https://scgmlz.github.io/scgdoc-hugo//js/bootstrap.min.js"></script>
     
     <script src="https://scgmlz.github.io/scgdoc-hugo//js/theme.js"></script>
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
     
 
 </body>

@@ -26,6 +26,35 @@
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
 <link href="https://scgmlz.github.io/scgdoc-hugo//css/hugo-easy-gallery.css" rel="stylesheet">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
 </head>
 
 
@@ -298,6 +327,40 @@ Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdi
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
 
+<h4 id="highlighting-with-line-numbers-starting-from-given-value">Highlighting with line numbers starting from given value.</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-python" data-lang="python">42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</code></pre></div></td><td class="code"><div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="k">class</span> <span class="nc">Base</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="hll">    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+    <span class="n">ln_distr</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">DistributionLogNormal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">par_distr</span> <span class="o">=</span> <span class="n">ba</span><span class="o">.</span><span class="n">ParameterDistribution</span><span class="p">(</span><span class="s2">&quot;/Particle/FullSphere/Radius&quot;</span><span class="p">,</span> <span class="n">ln_distr</span><span class="p">,</span> <span class="n">nparticles</span><span class="p">,</span> <span class="n">nfwhm</span><span class="p">,</span> <span class="n">ba</span><span class="o">.</span><span class="n">RealLimits</span><span class="o">.</span><span class="n">limited</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hmdso_thickness</span><span class="o">.</span><span class="n">value</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+
 
     </div>
     <div class="col-md-4">
@@ -539,6 +602,19 @@ Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdi
       <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/"><span>Working with BornAgain</span></a>
         <ul>
     <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/"><span>Quick Start</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
       <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-python/"><span>Working with Python scripts</span></a>
         <ul>
     <li class="dd-item">
@@ -548,6 +624,14 @@ Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdi
         </ul>
     </li>
         </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
     </li>
         </ul>
     </li>
@@ -600,9 +684,6 @@ Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdi
     <script src="https://scgmlz.github.io/scgdoc-hugo//js/bootstrap.min.js"></script>
     
     <script src="https://scgmlz.github.io/scgdoc-hugo//js/theme.js"></script>
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
     
 
 </body>

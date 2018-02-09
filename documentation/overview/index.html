@@ -26,6 +26,35 @@
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
 <link href="https://scgmlz.github.io/scgdoc-hugo//css/hugo-easy-gallery.css" rel="stylesheet">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
 </head>
 
 
@@ -165,7 +194,6 @@ The theme is heavilly based on following projects</p>
 <li><a href="https://gohugohq.com/partials/shortcode-embedding-partials-from-content-markdown-files/">Embedding partials in markdown using a shortcode</a></li>
 <li><a href="https://discourse.gohugo.io/t/code-tabs-widget/975/5">Code tabs widgets</a></li>
 <li><a href="https://stackoverflow.com/questions/46207512/bootstrap-tabs-as-hugo-shortcodes">Bootstrap Tabs as Hugo Shortcodes</a></li>
-<li><a href="https://github.com/rstudio/blogdown/issues/36">How to use Latex expressions in blogdown?</a></li>
 <li><a href="https://stackoverflow.com/questions/24680030/align-images-side-by-side-in-html">Align images side by side in html</a></li>
 <li><a href="https://owlcation.com/stem/how-to-align-images-side-by-side">How to Align Images Side-by-Side Using HTML</a></li>
 <li><a href="https://stackoverflow.com/questions/14675913/how-to-change-image-size-markdown">How to change image size Markdown?</a></li>
@@ -187,6 +215,14 @@ The theme is heavilly based on following projects</p>
 <li><a href="https://discourse.gohugo.io/t/hugo-as-a-documentation-tool/112/39">Hugo as documentation tool</a></li>
 <li><a href="http://whipperstacker.com/2016/09/22/convert-an-existing-site-into-hugo/">Convert an existing site to Hugo</a></li>
 <li><a href="https://blog.philipphauer.de/moving-wordpress-hugo/">Moving Wordpress to Hugo</a></li>
+</ul>
+
+<h5 id="latex-in-hugo">Latex in Hugo</h5>
+
+<ul>
+<li><a href="https://divadnojnarg.github.io/blog/mathjax/">Setting MathJax</a></li>
+<li><a href="http://www.latkin.org/blog/2016/08/07/better-tex-math-typesetting-in-hugo/">Better Tex in Hugo</a></li>
+<li><a href="https://github.com/rstudio/blogdown/issues/36">How to use Latex expressions in blogdown?</a></li>
 </ul>
 
 
@@ -428,6 +464,19 @@ The theme is heavilly based on following projects</p>
       <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/"><span>Working with BornAgain</span></a>
         <ul>
     <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/"><span>Using Graphical User Interface</span></a>
+        <ul>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/quick-start/"><span>Quick Start</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-gui/gui-overview/"><span>BornAgain GUI overview</span> </a>
+    </li>
+        </ul>
+    </li>
+    <li class="dd-item"><i class="fa liClosed li-item-icon"></i>
       <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/working-with-bornagain/working-with-python/"><span>Working with Python scripts</span></a>
         <ul>
     <li class="dd-item">
@@ -437,6 +486,14 @@ The theme is heavilly based on following projects</p>
         </ul>
     </li>
         </ul>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/troubleshooting/"><span>Troubleshooting</span> </a>
+    </li>
+    <li class="dd-item">
+      <i class="fa liSingle li-item-icon"></i>
+      <a href="https://scgmlz.github.io/scgdoc-hugo/documentation/bornagain/frequently-asked-questions/"><span>Frequently asked questions</span> </a>
     </li>
         </ul>
     </li>
@@ -489,9 +546,6 @@ The theme is heavilly based on following projects</p>
     <script src="https://scgmlz.github.io/scgdoc-hugo//js/bootstrap.min.js"></script>
     
     <script src="https://scgmlz.github.io/scgdoc-hugo//js/theme.js"></script>
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
     
 
 </body>
